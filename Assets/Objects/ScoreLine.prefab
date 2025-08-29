@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5224187810496398523}
   m_Layer: 7
   m_Name: ScoreLine
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

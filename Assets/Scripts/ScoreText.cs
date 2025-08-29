@@ -39,7 +39,7 @@ public class ScoreText : MonoBehaviour
         //Find max score
         else
         {
-            FindMaxScoreInLayer();
+            FindMaxScore();
         }
 
         //Find current gen number
@@ -52,24 +52,21 @@ public class ScoreText : MonoBehaviour
     }
 
 
-    void FindMaxScoreInLayer()
+    void FindMaxScore()
     {
         maxScore = 0;
-        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+        GameObject[] birdsObjects = GameObject.FindGameObjectsWithTag("Bird");
 
         //Search all birds, and find max score of all birds
-        foreach (GameObject obj in allObjects)
+        foreach (GameObject obj in birdsObjects)
         {
-            if (obj.layer == birdLayer)
-            {
-                var birdScript = obj.GetComponent<LossDetector>();
+            var birdScript = obj.GetComponent<LossDetector>();
 
-                if (birdScript != null)
+            if (birdScript != null)
+            {
+                if (birdScript.score > maxScore)
                 {
-                    if (birdScript.score > maxScore)
-                    {
-                        maxScore = birdScript.score;
-                    }
+                    maxScore = birdScript.score;
                 }
             }
         }

@@ -40,24 +40,20 @@ public class AiBird : MonoBehaviour
         //Find birds current position
         birdPosition = myRigidBody.position;
 
-        //Find all gameobjects
-        GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in allGameObjects)
+        //Find all pipes on screen
+        GameObject[] pipeObjects = GameObject.FindGameObjectsWithTag("Pipe");
+        //Search through all pipes
+        foreach (GameObject obj in pipeObjects)
         {
-            //Search gameobjects list for pipes
-            int obstacleLayer = LayerMask.NameToLayer("Obstacle");
-            if (obj.layer == obstacleLayer)
+            //If high enough, will always correspond to top pipe
+            if (obj.transform.position.y >= 5 && obj.transform.position.x > 0)
             {
-                //If high enough, will always correspond to top pipe
-                if (obj.transform.position.y >= 5 && obj.transform.position.x > 0)
-                {
-                    closestTopPipePosition = obj.transform.position;
-                }
-                //Else must be bottom pipe
-                else if (obj.transform.position.y <= -5 && obj.transform.position.x > 0)
-                {
-                    closestBottomPipePosition = obj.transform.position;
-                }
+                closestTopPipePosition = obj.transform.position;
+            }
+            //Else must be bottom pipe
+            else if (obj.transform.position.y <= -5 && obj.transform.position.x > 0)
+            {
+                closestBottomPipePosition = obj.transform.position;
             }
         }
 

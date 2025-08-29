@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 87106ada6330e1143b2c3f8b60ca22aa, type: 3}
+      propertyPath: m_TagString
+      value: Bird
+      objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 87106ada6330e1143b2c3f8b60ca22aa, type: 3}
       propertyPath: m_Controller
       value: 
@@ -96,13 +100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpStrength: 5
   animator: {fileID: 9200984897898417904}
-  input: 0
   closestTopPipePosition: {x: 0, y: 0}
   closestBottomPipePosition: {x: 0, y: 0}
   closestTopPipeDistance: {x: 0, y: 0}
   closestBottomPipeDistance: {x: 0, y: 0}
   birdPosition: {x: 0, y: 0}
-  birds: []
 --- !u!50 &2239960991898930833
 Rigidbody2D:
   serializedVersion: 4
