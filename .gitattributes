@@ -1,0 +1,8 @@
+# Ignore Unity shaders in language stats
+*.shader linguist-vendored
+*.cginc  linguist-vendored
+*.hlsl   linguist-vendored
+*.compute linguist-vendored
+
+# Optionally, ignore meta files
+*.meta linguist-vendored
